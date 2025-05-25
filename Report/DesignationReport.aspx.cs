@@ -46,7 +46,7 @@ public partial class Report_DesignationReport : System.Web.UI.Page
         
         ds = crudOp.ByProcedure("Proc_RecordDesig",
             new string[] { "Action", "ClgName", "DesignName" },
-            new string[] { "FilterdRecord", ddlCollege.SelectedItem.Text == "-- Select College --" ? ddlCollege.SelectedItem.Text = "":ddlCollege.SelectedItem.Text.Trim(), txtDesignationName.Text.Trim() });
+            new string[] { "FilterdRecord", ddlCollege.SelectedItem.Text == "-- Select College --" ? "" :ddlCollege.SelectedItem.Text.Trim(), txtDesignationName.Text.Trim() });
         if (ds!=null)
         {
             grdDesignationRcrd.DataSource = ds;
