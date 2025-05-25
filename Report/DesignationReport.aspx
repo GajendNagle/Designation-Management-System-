@@ -48,18 +48,14 @@
                     <asp:TextBox ID="txtDesignationName" runat="server" CssClass="form-control"
                         placeholder="Enter full designation name"></asp:TextBox>
                 </div>
-                <!-- Stream Selection -->
-              <%--  <div class="col-sm-12 col-md-4 form-group">
-                    <label for="ddlStream">Stream</label>
-                    <asp:DropDownList ID="ddlStream" runat="server" CssClass="form-control">
-                    </asp:DropDownList>
-                </div>--%>
                 <!-- Submit Button -->
                 <div class="col-sm-12 col-md-2 form-group mt-4">
-                     <a class="btn btn-primary  float-left" href="../Designation-Master/Register-Designation.aspx">Add New</a>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Go" CssClass="btn btn-primary float-right"
-                        OnClick="btnSubmit_Click" ValidationGroup="RegBtnValid" />
-                </div>
+        <asp:Button ID="btnSubmit" runat="server" Text="Go" CssClass="btn btn-primary float"
+        OnClick="btnSubmit_Click" ValidationGroup="RegBtnValid" />
+        </div>
+        <div class="col-sm-12 col-md-2 form-group mt-4">
+            <a class="btn btn-primary float" href="../Designation-Master/Register-Designation.aspx">Add New</a>
+        </div>
             </div>
             <hr />
             <div class="row">
