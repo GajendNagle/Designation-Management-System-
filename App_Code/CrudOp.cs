@@ -26,6 +26,7 @@ public class CrudOp
                 }
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
+                ds.Clear();
                 sda.Fill(ds);
                 return ds;
             }

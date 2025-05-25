@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 public partial class Designation_Master_Register_Designation : System.Web.UI.Page
 {
     CrudOp crudOp = new CrudOp();
+    ClgBind ClgBind = new ClgBind();
     DataSet ds = new DataSet();
     DataTable dt = new DataTable();
     protected void Page_Load(object sender, EventArgs e)
@@ -24,34 +25,38 @@ public partial class Designation_Master_Register_Designation : System.Web.UI.Pag
 
     protected void BindColleges()
     {
-        try
-        {
-            ds = crudOp.ByProcedure("Proc_RecordDesig",
-            new string[] { "Action" },
-            new string[] { "College" });
-            if (ds != null)
-            {
-                if (ds.Tables.Count > 0)
-                {
-                    if (ds.Tables[0].Rows.Count > 0)
-                    {
-                        ddlCollege.DataSource = ds.Tables[0];
-                        ddlCollege.DataTextField = "CollegeName";
-                        ddlCollege.DataValueField = "CollegeID";
-                        ddlCollege.DataBind();
-                        ddlCollege.Items.Insert(0, new ListItem("-- Select College --", "0"));
-                    }
-                }
-            }
-        }
-        catch (Exception)
-        {
-            ddlCollege.Items.Clear();
-            ddlCollege.Items.Insert(0, new ListItem("-- Select College --", "0"));
-        }
+        //try
+        //{
+        //    ds = crudOp.ByProcedure("Proc_RecordDesig",
+        //    new string[] { "Action" },
+        //    new string[] { "College" });
+        //    if (ds != null)
+        //    {
+        //        if (ds.Tables.Count > 0)
+        //        {
+        //            if (ds.Tables[0].Rows.Count > 0)
+        //            {
+        //                ddlCollege.DataSource = ds.Tables[0];
+        //                ddlCollege.DataTextField = "CollegeName";
+        //                ddlCollege.DataValueField = "CollegeID";
+        //                ddlCollege.DataBind();
+        //                ddlCollege.Items.Insert(0, new ListItem("-- Select College --", "0"));
+        //            }
+        //        }
+        //    }
+        //}
+        //catch (Exception)
+        //{
+        //    ddlCollege.Items.Clear();
+        //    ddlCollege.Items.Insert(0, new ListItem("-- Select College --", "0"));
+        //}
+        ClgBind.BindColleges(ddlCollege);
     }
     protected void BindStreams()
     {
+
+
+
         try
         {
             ds = crudOp.ByProcedure("Proc_RecordDesig",
